@@ -15,9 +15,11 @@ import dj_database_url
 
 
 #Usando PostgreSQL com Heroku
+
 DATABASES = {
-    'defult': dj_database_url.config()
+    'default': dj_database_url.config()
 }
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django2',
         'USER': 'user',
-        'PASSWORD': 'password',
+        'PASSWORD': 'xxxxxx',
         'HOST': 'localhost',
         'PORT': '3306',
     }

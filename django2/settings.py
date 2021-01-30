@@ -15,11 +15,11 @@ import dj_database_url
 
 
 #Usando PostgreSQL com Heroku
-
+"""
 DATABASES = {
     'default': dj_database_url.config()
 }
-
+"""
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'c46)r0c%q-8^#i9nbft_-5cv6hjl91idz6ws)lhp=^6(zkn1(%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -87,18 +87,18 @@ WSGI_APPLICATION = 'django2.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 #Configuração Database para MySQL
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django2',
         'USER': 'user',
-        'PASSWORD': 'xxxxxx',
+        'PASSWORD': '********',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
-"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -143,7 +143,7 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 
 
 #Configuração de email
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 '''
 EMAIL_HOST = 'localhost'

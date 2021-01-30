@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import produto, contato, index
+from .views import cadastro_produto, contato, home, produto
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', home, name='home'),
+    path('produto/', produto, name='produto'),
     path('contato/', contato, name='contato'),
-    path('produto/', produto,name='produto'),
+    path('cadastro_produto/', cadastro_produto, name='cadastro_produto'),
 ]

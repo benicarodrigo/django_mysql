@@ -3,26 +3,24 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Contato</title>
+    <title>Produto</title>
     {% bootstrap_css %}
 </head>
 <body>
     <div class="container">
-        <h1>Contato</h1>
-        {% bootstrap_messages %}
-
-        <form action="{% url 'contato' %}" method="post" class="form" autocomplete="off">
+        <h1>Produto</h1>
+        {% bootstrap_messages%}
+        <form action="{% url 'cadastro_produto' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
             {% csrf_token %}
             {% bootstrap_form form %}
             {% buttons %}
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                <button type="submit" class="btn btn-primay">Cadastrar</button>
             {% endbuttons %}
         </form>
     </div>
     {% buttons %}
         <a class="btn btn-primary" href="{% url 'home' %}" role="button">Home</a>
     {% endbuttons %}
-
 
 {% bootstrap_javascript jquery='full' %}
 </body>

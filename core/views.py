@@ -4,12 +4,16 @@ from .forms import ContatoForm, ProdutoModelForm
 from .models import Produto
 
 
-def index(requests):
+def home(requests):
+    return render(requests, 'home.html')
+
+
+def produto(requests):
     context = {
         'produtos': Produto.objects.all()
 
     }
-    return render(requests, 'index.html', context)
+    return render(requests, 'produto.html', context)
 
 
 def contato(requests):
@@ -28,7 +32,7 @@ def contato(requests):
     return render(requests, 'contato.html', context )
 
 
-def produto(requests):
+def cadastro_produto(requests):
     if str(requests.user) != 'AnonymousUser':
         if str(requests.method) == 'POST':
             form = ProdutoModelForm(requests.POST, requests.FILES)
@@ -43,9 +47,9 @@ def produto(requests):
         context = {
             'form': form
         }
-        return render(requests, 'produto.html', context)
+        return render(requests, 'cadastro_produto.html', context)
     else:
-        return redirect('index')
+        return redirect('home')
 
 
 
